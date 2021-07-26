@@ -2,14 +2,28 @@
   "name": "@lithen/super-element",
   "version": "1.0.0",
   "description": "Super Element class of Lithen",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "author": "Gabriel José",
+  "homepage": "https://github.com/Gabriel-JM/lithen-super-element#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gabriel-JM/lithen-super-element.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gabriel-JM/lithen-super-element/issues"
+  },
+  "main": "./build/src/index.js",
+  "types": "./build/src/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
   "devDependencies": {
     "typescript": "^4.3.5"
-  }
+  },
+  "keywords": [
+    "lithen",
+    "webcomponents",
+    "web-components",
+    "client-side"
+  ],
+  "license": "ISC"
 }
