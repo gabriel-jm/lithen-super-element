@@ -9,13 +9,37 @@
 import { SuperElement } from 'lithen-super-element'
 
 class AppElement extends SuperElement {
+  init() {
+    this.select('p').className = 'text'
+  }
+  
+  styling() {
+    return `
+      .text {
+        color: #d45;
+      }
+    `
+  }
+
   render() {
-    return '<p>Element using Lithen example</p>'
+    return '<p>Element using Lithen</p>'
   }
 }
 
 customElements.define('app-element', AppElement)
 ```
+
+## SuperElement methods and attributes
+- [render](./docs/render.md)
+- [styling](./docs/styling.md)
+- [init]()
+- [select](./docs/select.md)
+- [selectAll]()
+- [on]()
+- [once]()
+- [root]()
+- [constructor options]()
+
 
 ## Other libs that are part of Lithen
 - [rendering-tag-functions](https://www.npmjs.com/package/rendering-tag-functions)
