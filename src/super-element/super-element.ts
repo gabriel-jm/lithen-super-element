@@ -62,7 +62,6 @@ export class SuperElement extends HTMLElement {
    * @param oldValue The old value of the attribute.
    * @param newValue The new value its receiving.
    * 
-   * @remarks
    * This method requires that you define which are
    * the observed attributes. To define it, register
    * a static get method called observedAttributes
@@ -106,7 +105,6 @@ export class SuperElement extends HTMLElement {
    * Equavalent to addEventListener method,
    * but runs only once.
    * 
-   * @remarks
    * This method always has
    * the `once` option of AddEventListenerOptions as `true`.
    *
@@ -126,8 +124,7 @@ export class SuperElement extends HTMLElement {
   /**
    * Selects an element by its query.
    * 
-   * @remarks
-   * Works using `element.querySelector` function and
+   * Works using `element.root.querySelector` function and
    * aditionally add the `on`, `once`, `select` and `selectAll`
    * functions to the result element.
    * 
@@ -149,8 +146,7 @@ export class SuperElement extends HTMLElement {
   /**
    * Selects all elements that matches a query.
    * 
-   * @remarks
-   * Works using `element.querySelectorAll` function and
+   * Works using `element.root.querySelectorAll` function and
    * aditionally add the `on`, `once`, `select` and `selectAll`
    * functions to the result elements.
    * 
