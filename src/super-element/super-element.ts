@@ -130,7 +130,7 @@ export class SuperElement extends HTMLElement {
    * 
    * @param query An element search query, like CSS selection queries.
    */
-   select<T extends HTMLElement>(query: string) {
+  select<T extends HTMLElement>(query: string) {
     const element = this.root.querySelector(query) as SelectedElement<T>
 
     if(!element) return

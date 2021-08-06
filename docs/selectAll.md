@@ -3,7 +3,7 @@
 The `selectAll` method works just like the [`select`](./select.md) method, but the is on `element.root.querySelectorAll` instead.
 
 ## Parameters
-A element query - type string - Example: '.any-class', '#any-id'.
+- `query` - type string - an element selector. Example: '.any-class', '#any-id'.
 
 ## Usage
 ```ts

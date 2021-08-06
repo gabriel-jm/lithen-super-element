@@ -1,10 +1,10 @@
 # Lithen - SuperElement - select method
 
 The `select` method is a wrap in `element.root.querySelector`, the [`root`](./root.md) is another custom getter method of SuperElement, it uses it to abstract if the element has a shadowRoot or not and it adds the `select`, `selectAll`, `on` and `once` custom methods to the found element.
-It returns the found element or `null` if no element was found.
+It returns the found element or `undefined` if no element was found.
 
 ## Parameters
-A element query - type string - Example: '.any-class', '#any-id'.
+- `query` - type string - an element selector. Example: '.any-class', '#any-id'.
 
 ## Usage
 ```ts
