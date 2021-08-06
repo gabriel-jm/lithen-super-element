@@ -38,7 +38,7 @@ customElements.define('app-element', AppElement)
 - [on](./docs/on.md)
 - [once](./docs/once.md)
 - [root](./docs/root.md)
-- [constructor options]()
+- [constructor options](./docs/constructor.md)
 
 
 ## Other libs that are part of Lithen
