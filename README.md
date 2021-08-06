@@ -37,7 +37,7 @@ customElements.define('app-element', AppElement)
 - [selectAll](./docs/selectAll.md)
 - [on](./docs/on.md)
 - [once](./docs/once.md)
-- [root]()
+- [root](./docs/root.md)
 - [constructor options]()
 
 
