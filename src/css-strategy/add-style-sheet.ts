@@ -1,7 +1,7 @@
-import { SuperElement } from '../super-element/super-element'
-import { CSSStyleSheetStrategy } from './css-style-sheet-strategy'
-import { StyleElementStrategy } from './style-element-strategy'
-import { cssStyleSheetSupport } from './verify-constructable-style-sheet-support'
+import { SuperElement } from '../super-element/super-element.js'
+import { CSSStyleSheetStrategy } from './css-style-sheet-strategy.js'
+import { StyleElementStrategy } from './style-element-strategy.js'
+import { cssStyleSheetSupport } from './verify-constructable-style-sheet-support.js'
 
 let sharedStyles = ''
 

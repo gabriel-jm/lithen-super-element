@@ -1,4 +1,4 @@
-import { SuperElement } from '../super-element/super-element'
+import { SuperElement } from '../super-element/super-element.js'
 
 interface CSSStyleSheetSupported extends CSSStyleSheet {
   replace(css: string): void

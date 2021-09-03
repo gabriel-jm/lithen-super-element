@@ -1,1 +1,1 @@
-export * from './add-style-sheet'
+export * from './add-style-sheet.js'

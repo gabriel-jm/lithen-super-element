@@ -1,1 +1,1 @@
-export * from './apply-html'
+export * from './apply-html.js'

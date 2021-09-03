@@ -1,6 +1,6 @@
-import { SelectedElement, SuperElementBuildProps } from './protocols/index'
-import { addStyleSheet } from '../css-strategy/index'
-import { applyHTML } from '../rendering-strategy'
+import { SelectedElement, SuperElementBuildProps } from './protocols/index.js'
+import { addStyleSheet } from '../css-strategy/index.js'
+import { applyHTML } from '../rendering-strategy/index.js'
 
 type ElementRootReference = HTMLElement | (
   ShadowRoot & { adoptedStyleSheets: CSSStyleSheet[] }
@@ -29,6 +29,7 @@ export class SuperElement extends HTMLElement {
       this.attachShadow({ mode })
     }
 
+    console.log(this.render())
     applyHTML(this, this.render())
     shadowRoot && addStyleSheet(this, this.styling())
 

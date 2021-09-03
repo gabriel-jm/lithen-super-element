@@ -1,5 +1,5 @@
-import { SuperElement } from '../super-element/super-element'
+import { SuperElement } from '../super-element/super-element.js'
 
 export function renderFromElement(context: SuperElement, content: HTMLElement) {
-  context.root.appendChild(content)
+  content instanceof Node && context.root?.appendChild(content)
 }

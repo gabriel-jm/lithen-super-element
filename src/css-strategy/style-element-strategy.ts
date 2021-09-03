@@ -1,4 +1,4 @@
-import { SuperElement } from '../super-element/super-element'
+import { SuperElement } from '../super-element/super-element.js'
 
 export class StyleElementStrategy {
   execute(element: SuperElement, styles: string, sharedStyles = '') {

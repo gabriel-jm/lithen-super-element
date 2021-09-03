@@ -4,6 +4,8 @@
 
 **Super Element** is a class used to create Web Components, it provides some features to make Web Components usage a bit simple. But it not focus on change the aproach of using the Web Components, like implementing reactivity and the like, its a bit like a syntax sugar.
 
+This package uses **ESModules**.
+
 ## Usage
 ```ts
 import { SuperElement } from 'lithen-super-element'
