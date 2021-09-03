@@ -7,7 +7,7 @@ export function applyHTML(context: SuperElement, content: string | HTMLElement) 
     renderFromString(context, content)
   }
 
-  if(typeof content === 'object') {
+  if(content instanceof Node) {
     renderFromElement(context, content)
   }
 
