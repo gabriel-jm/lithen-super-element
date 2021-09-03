@@ -197,7 +197,7 @@ export class SuperElement extends HTMLElement {
    *  }
    * ```
    */
-  render(): string {
+  render(): string | HTMLElement {
     return ''
   }
 }

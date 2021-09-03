@@ -11,5 +11,6 @@ export function applyHTML(context: SuperElement, content: string | HTMLElement) 
     renderFromElement(context, content)
   }
 
+  console.info('Received content:', content)
   throw new TypeError('Unexpected content type')
 }
