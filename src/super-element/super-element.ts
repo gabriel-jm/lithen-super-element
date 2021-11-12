@@ -29,7 +29,6 @@ export class SuperElement extends HTMLElement {
       this.attachShadow({ mode })
     }
 
-    console.log(this.render())
     applyHTML(this, this.render())
     shadowRoot && addStyleSheet(this, this.styling())
 
