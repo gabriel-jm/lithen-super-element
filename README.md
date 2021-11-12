@@ -44,5 +44,5 @@ customElements.define('app-element', AppElement)
 
 
 ## Other libs that are part of Lithen
-- [rendering-tag-functions](https://www.npmjs.com/package/rendering-tag-functions)
+- [lithen-tag-functions](https://www.npmjs.com/package/lithen-tag-functions)
 - [lithen-routing](https://www.npmjs.com/package/lithen-router)
