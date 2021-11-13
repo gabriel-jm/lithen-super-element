@@ -9,6 +9,18 @@ type ElementRootReference = HTMLElement | (
 export class SuperElement extends HTMLElement {
 
   /**
+   * The mode of the attached shadow. It is set as
+   * 'none' if no shadow is attached.
+   */
+  mode: 'open' | 'closed' | 'none' = 'none'
+
+  /**
+   * A boolean that indicates if the element as or
+   * not a shadow root attached to it.
+   */
+  hasShadowRoot: boolean
+
+  /**
    * The root of the element depends if its has or
    * not a shadowDOM. If has, it returns the shadowRoot
    * when not it returns the element itself.
@@ -25,21 +37,23 @@ export class SuperElement extends HTMLElement {
   constructor({ mode = 'open', shadowRoot = true }: SuperElementBuildProps = {}) {
     super()
 
+    this.hasShadowRoot = shadowRoot
+    
     if(shadowRoot) {
+      this.mode = mode
       this.attachShadow({ mode })
     }
-
-    applyHTML(this, this.render())
-    shadowRoot && addStyleSheet(this, this.styling())
-
-    queueMicrotask(() => this.init())
   }
 
   /**
-   * Method called in element instantiation
-   * and after `render` and `styling`.
+   * Method used to apply the returned values of render
+   * and styling methods. This method is necessary because
+   * of the error when using private fields on subclasses
    */
-  init() {}
+  applyRender() {
+    applyHTML(this, this.render())
+    this.hasShadowRoot && addStyleSheet(this, String(this.styling()))
+  }
 
   /**
    * Default lifecycle method of Web Components.
@@ -180,7 +194,7 @@ export class SuperElement extends HTMLElement {
    * }
    * ```
    */
-  styling(): string {
+  styling(): string | String {
     return ''
   }
 
@@ -197,7 +211,7 @@ export class SuperElement extends HTMLElement {
    *  }
    * ```
    */
-  render(): string | HTMLElement {
+  render(): string | String | DocumentFragment | Element {
     return ''
   }
 }
