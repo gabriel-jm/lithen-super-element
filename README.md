@@ -11,6 +11,13 @@ This package uses **ESModules**.
 import { SuperElement } from 'lithen-super-element'
 
 class AppElement extends SuperElement {
+  constructor() {
+    super()
+
+    this.applyRender()
+    this.init()
+  }
+
   init() {
     this.select('p').className = 'text'
   }
@@ -32,16 +39,15 @@ customElements.define('app-element', AppElement)
 ```
 
 ## SuperElement methods and attributes
+- [constructor options](./docs/constructor.md)
+- [root](./docs/root.md)
+- [applyRender](./docs/apply-render.md)
 - [render](./docs/render.md)
 - [styling](./docs/styling.md)
-- [init](./docs/init.md)
 - [select](./docs/select.md)
-- [selectAll](./docs/selectAll.md)
+- [selectAll](./docs/select-all.md)
 - [on](./docs/on.md)
 - [once](./docs/once.md)
-- [root](./docs/root.md)
-- [constructor options](./docs/constructor.md)
-
 
 ## Other libs that are part of Lithen
 - [lithen-tag-functions](https://www.npmjs.com/package/lithen-tag-functions)
