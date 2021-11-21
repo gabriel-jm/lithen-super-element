@@ -15,7 +15,7 @@
   "types": "./build/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "rm -rf build && npm run build"
   },
   "devDependencies": {
     "typescript": "^4.3.5"
@@ -26,5 +26,5 @@
     "web-components",
     "client-side"
   ],
-  "license": "ISC"
+  "license": "MIT"
 }

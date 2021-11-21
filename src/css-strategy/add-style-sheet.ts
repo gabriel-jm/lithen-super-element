@@ -15,11 +15,11 @@ let sharedStyles = ''
  * 
  * @defaultValue `''`
  */
-export function defineSharedStyles(styles: string) {
-  sharedStyles = styles
+export function defineSharedStyles(styles: string | String) {
+  sharedStyles = styles.toString()
 }
 
-export function addStyleSheet(element: SuperElement, styles: string) {
+export function addStyleSheet(element: SuperElement, styles: string | String) {
   if(!styles && !sharedStyles) return
 
   const hasSupport = cssStyleSheetSupport()
@@ -28,5 +28,5 @@ export function addStyleSheet(element: SuperElement, styles: string) {
     ? CSSStyleSheetStrategy
     : StyleElementStrategy
 
-  new Strategy().execute(element, styles, sharedStyles)
+  new Strategy().execute(element, styles.toString(), sharedStyles)
 }

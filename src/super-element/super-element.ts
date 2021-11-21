@@ -52,7 +52,7 @@ export class SuperElement extends HTMLElement {
    */
   applyRender() {
     applyHTML(this, this.render())
-    this.hasShadowRoot && addStyleSheet(this, String(this.styling()))
+    this.hasShadowRoot && addStyleSheet(this, this.styling())
   }
 
   /**
