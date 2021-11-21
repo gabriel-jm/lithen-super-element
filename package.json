@@ -17,14 +17,14 @@
     "build": "tsc",
     "prepublishOnly": "rm -rf build && npm run build"
   },
-  "devDependencies": {
-    "typescript": "^4.3.5"
-  },
   "keywords": [
     "lithen",
     "webcomponents",
     "web-components",
     "client-side"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.5.2"
+  }
 }
