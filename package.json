@@ -11,6 +11,7 @@
   "bugs": {
     "url": "https://github.com/Gabriel-JM/lithen-super-element/issues"
   },
+  "type": "module",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "scripts": {
