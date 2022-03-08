@@ -49,6 +49,10 @@ export class SuperElement extends HTMLElement {
       this.mode = mode
       this.attachShadow({ mode })
     }
+
+    try {
+      this.applyRender()
+    } catch {}
   }
 
   /**
