@@ -6,6 +6,12 @@ type ElementRootReference = HTMLElement | (
   ShadowRoot & { adoptedStyleSheets: CSSStyleSheet[] }
 )
 
+export type SuperElementStylingValues = string | String
+
+export type SuperElementRenderValues = (
+  string | String | Element | DocumentFragment | NodeList | HTMLCollection
+)
+
 export class SuperElement extends HTMLElement {
 
   /**
@@ -194,7 +200,7 @@ export class SuperElement extends HTMLElement {
    * }
    * ```
    */
-  styling(): string | String {
+  styling(): SuperElementStylingValues {
     return ''
   }
 
@@ -211,7 +217,7 @@ export class SuperElement extends HTMLElement {
    *  }
    * ```
    */
-  render(): string | String | DocumentFragment | Element {
+  render(): SuperElementRenderValues {
     return ''
   }
 }
