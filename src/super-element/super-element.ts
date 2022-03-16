@@ -40,7 +40,11 @@ export class SuperElement extends HTMLElement {
   /**
    * Options to configure the element building. (Optional)
    */
-  constructor({ mode = 'open', shadowRoot = true }: SuperElementBuildProps = {}) {
+  constructor({
+    mode = 'open',
+    shadowRoot = true,
+    preventRenderApplying = false
+  }: SuperElementBuildProps = {}) {
     super()
 
     this.hasShadowRoot = shadowRoot
@@ -50,9 +54,11 @@ export class SuperElement extends HTMLElement {
       this.attachShadow({ mode })
     }
 
-    try {
-      this.applyRender()
-    } catch {}
+    if (!preventRenderApplying) {
+      try {
+        this.applyRender()
+      } catch {}
+    }
   }
 
   /**

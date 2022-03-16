@@ -13,4 +13,13 @@ export interface SuperElementBuildProps {
    * @defaultValue `true`
    */
   shadowRoot?: boolean
+
+  /**
+   * if you do not want the `applyRender` to be
+   * called on SuperElement instantiation. Use this
+   * to control rendering manually.
+   * 
+   * @defaultValue `false`
+   */
+  preventRenderApplying?: boolean
 }
