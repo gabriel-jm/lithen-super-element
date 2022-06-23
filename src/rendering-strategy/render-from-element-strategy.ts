@@ -1,7 +1,7 @@
 import { SuperElement } from '../super-element/super-element.js'
 
 export function renderFromElement(
-  context: SuperElement,
+  context: Element | SuperElement,
   content: Element | DocumentFragment | NodeList | HTMLCollection
 ) {
   const isSingleElement = (
@@ -13,5 +13,9 @@ export function renderFromElement(
     ? [content]
     : Array.from(content) as Array<Element>
 
-  context.root?.replaceChildren(...elementsList)
+  const contextRoot = 'root' in context
+    ? context.root
+    : context
+
+  contextRoot.replaceChildren(...elementsList)
 }
