@@ -1,14 +1,24 @@
 import { SuperElement } from '../super-element/super-element.js'
 
 export class StyleElementStrategy {
-  execute(element: SuperElement, styles: string, sharedStyles = '') {
+  execute(element: Element | SuperElement, styles: string, sharedStyles = '') {
     const styleElement = document.createElement('style')
 
     styleElement.innerHTML = sharedStyles + styles
 
-    element.root.insertBefore(
+    const elementRoot = this.getElementRoot(element)
+
+    elementRoot.insertBefore(
       styleElement,
-      element.root.firstChild
+      elementRoot.firstChild
     )
+  }
+
+  getElementRoot(element: Element | SuperElement) {
+    if ('root' in element) {
+      return element.root
+    }
+
+    return element
   }
 }

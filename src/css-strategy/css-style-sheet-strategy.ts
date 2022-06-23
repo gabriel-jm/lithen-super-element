@@ -6,14 +6,14 @@ interface CSSStyleSheetSupported extends CSSStyleSheet {
 
 export class CSSStyleSheetStrategy {
 
-  execute(element: SuperElement, styles: string, sharedStyles = '') {
+  execute(element: Element | SuperElement, styles: string, sharedStyles = '') {
     const sharedStyleSheet = new CSSStyleSheet() as CSSStyleSheetSupported
     sharedStyleSheet.replace(sharedStyles)
 
     const styleSheet = new CSSStyleSheet() as CSSStyleSheetSupported
     styleSheet.replace(styles)
 
-    const elementRoot = element.root as ShadowRoot & {
+    const elementRoot = this.getElementRoot(element) as ShadowRoot & {
       adoptedStyleSheets: CSSStyleSheet[]
     }
 
@@ -24,4 +24,11 @@ export class CSSStyleSheetStrategy {
     ]
   }
   
+  getElementRoot(element: Element | SuperElement) {
+    if ('root' in element) {
+      return element.root
+    }
+
+    return element
+  }
 }

@@ -19,7 +19,7 @@ export function defineSharedStyles(styles: string | String) {
   sharedStyles = styles.toString()
 }
 
-export function addStyleSheet(element: SuperElement, styles: string | String) {
+export function addStyleSheet(element: Element | SuperElement, styles: string | String) {
   if(!styles && !sharedStyles) return
 
   const hasSupport = cssStyleSheetSupport()
