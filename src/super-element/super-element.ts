@@ -27,6 +27,15 @@ export class SuperElement extends HTMLElement {
   hasShadowRoot: boolean
 
   /**
+   * A boolean that indicates if the element as already
+   * apply html and css to its content, it is used to not
+   * apply the same content twice.
+   * 
+   * Intial value is `false`.
+   */
+  renderApplied = false
+
+  /**
    * The root of the element depends if its has or
    * not a shadowDOM. If has, it returns the shadowRoot
    * when not it returns the element itself.
@@ -49,7 +58,7 @@ export class SuperElement extends HTMLElement {
 
     this.hasShadowRoot = shadowRoot
     
-    if(shadowRoot) {
+    if (shadowRoot) {
       this.mode = mode
       this.attachShadow({ mode })
     }
@@ -67,8 +76,11 @@ export class SuperElement extends HTMLElement {
    * of the error when using private fields on subclasses
    */
   applyRender() {
-    applyHTML(this, this.render())
-    this.hasShadowRoot && addStyleSheet(this, this.styling())
+    if (!this.renderApplied) {
+      applyHTML(this, this.render())
+      this.hasShadowRoot && addStyleSheet(this, this.styling())
+      this.renderApplied = true
+    }
   }
 
   /**
