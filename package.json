@@ -13,7 +13,11 @@
   },
   "type": "module",
   "main": "./build/index.js",
+  "module": "./build/index.js",
   "types": "./build/index.d.ts",
+  "exports": {
+    "import": "./build/index.js"
+  },
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "rm -rf build && npm run build"
