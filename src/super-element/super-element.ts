@@ -12,6 +12,18 @@ export type SuperElementRenderValues = (
   string | String | Element | DocumentFragment | NodeList | HTMLCollection
 )
 
+function scheduleRenderNotAppliedWarn(element: SuperElement) {
+  queueMicrotask(() => {
+    if (element.renderApplied) return
+
+    console.warn(
+      `[${element.constructor.name}]`,
+      'Auto render not applied, this can be happening because of the usage',
+      'of private fields or methods inside the render or styling'
+    )
+  })
+}
+
 export class SuperElement extends HTMLElement {
 
   /**
@@ -66,7 +78,9 @@ export class SuperElement extends HTMLElement {
     if (!preventRenderApplying) {
       try {
         this.applyRender()
-      } catch {}
+      } catch {
+        scheduleRenderNotAppliedWarn(this)
+      }
     }
   }
 
