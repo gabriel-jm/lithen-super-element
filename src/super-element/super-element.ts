@@ -151,7 +151,7 @@ export class SuperElement extends HTMLElement {
    */
   on(
     type: keyof HTMLElementEventMap | string,
-    listener: EventListenerOrEventListenerObject,
+    listener: (event: unknown) => void | Promise<void>,
     options?: AddEventListenerOptions
   ) {
     this.addEventListener(type, listener, options)
@@ -171,7 +171,7 @@ export class SuperElement extends HTMLElement {
    */
   once(
     type: keyof HTMLElementEventMap | string,
-    listener: EventListenerOrEventListenerObject,
+    listener: (event: unknown) => void | Promise<void>,
     options?: AddEventListenerOptions
   ) {
     this.addEventListener(type, listener, { ...options, once: true })

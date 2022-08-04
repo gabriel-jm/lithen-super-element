@@ -8,7 +8,7 @@ export type onEventFunction = (
    * A listener for the event.
    * It can be a `EventListener` or an `EventListenerObject`.
    */
-  listener: EventListenerOrEventListenerObject,
+  listener: (event: unknown) => void | Promise<void>,
 
   /**
    * A list of configurations for the event listener.
