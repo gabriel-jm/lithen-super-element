@@ -1,3 +1,4 @@
+import { getRenderRoot } from '../rendering-strategy/get-render-root.js'
 import { SuperElement } from '../super-element/super-element.js'
 
 export class StyleElementStrategy {
@@ -6,19 +7,11 @@ export class StyleElementStrategy {
 
     styleElement.innerHTML = sharedStyles + styles
 
-    const elementRoot = this.getElementRoot(element)
+    const elementRoot = getRenderRoot(element)
 
     elementRoot.insertBefore(
       styleElement,
       elementRoot.firstChild
     )
-  }
-
-  getElementRoot(element: Element | SuperElement) {
-    if ('root' in element) {
-      return element.root
-    }
-
-    return element
   }
 }

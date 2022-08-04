@@ -1,4 +1,5 @@
 import { SuperElement } from '../super-element/super-element.js'
+import { getRenderRoot } from './get-render-root.js'
 
 export function renderFromElement(
   context: Element | SuperElement,
@@ -13,9 +14,7 @@ export function renderFromElement(
     ? [content]
     : Array.from(content) as Array<Element>
 
-  const contextRoot = 'root' in context
-    ? context.root
-    : context
+  const contextRoot = getRenderRoot(context)
 
   contextRoot.replaceChildren(...elementsList)
 }

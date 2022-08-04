@@ -1,6 +1,6 @@
 import { SelectedElement, SuperElementBuildProps } from './protocols/index.js'
 import { addStyleSheet } from '../css-strategy/index.js'
-import { applyHTML } from '../rendering-strategy/index.js'
+import { applyHTML, getRenderRoot } from '../rendering-strategy/index.js'
 
 type ElementRootReference = HTMLElement | (
   ShadowRoot & { adoptedStyleSheets: CSSStyleSheet[] }
@@ -55,7 +55,7 @@ export class SuperElement extends HTMLElement {
    * @returns reference to the current root of the element.
    */
   get root(): ElementRootReference {
-    return (this.shadowRoot || this) as ElementRootReference
+    return getRenderRoot(this) as ElementRootReference
   }
   
   /**

@@ -25,8 +25,8 @@ export class CSSStyleSheetStrategy {
   }
   
   getElementRoot(element: Element | SuperElement) {
-    if ('root' in element) {
-      return element.root
+    if ('shadowRoot' in element) {
+      return element.shadowRoot
     }
 
     return element
