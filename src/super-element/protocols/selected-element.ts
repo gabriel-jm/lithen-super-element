@@ -44,7 +44,7 @@ export type SelectedElement<T extends HTMLElement> = T & {
    * 
    * @param query An element search query, like CSS selection queries.
    */
-  select<T2 extends HTMLElement>(query: string): SelectedElement<T2> | undefined
+  select<T2 extends HTMLElement>(query: string): SelectedElement<T2>
 
   /**
    * Selects all elements that matches a query.

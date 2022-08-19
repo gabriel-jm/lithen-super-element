@@ -64,7 +64,7 @@ export class SuperElement extends HTMLElement {
   constructor({
     mode = 'open',
     shadowRoot = true,
-    preventRenderApplying = false
+    preventRender = false
   }: SuperElementBuildProps = {}) {
     super()
 
@@ -75,7 +75,7 @@ export class SuperElement extends HTMLElement {
       this.attachShadow({ mode })
     }
 
-    if (!preventRenderApplying) {
+    if (!preventRender) {
       try {
         this.applyRender()
       } catch {
@@ -154,7 +154,13 @@ export class SuperElement extends HTMLElement {
     listener: Function,
     options?: AddEventListenerOptions
   ) {
-    this.addEventListener(type, listener as EventListener, options)
+    this.addEventListener(
+      type,
+      listener as EventListener,
+      options
+    )
+
+    return this
   }
 
   /**
@@ -174,7 +180,13 @@ export class SuperElement extends HTMLElement {
     listener: Function,
     options?: AddEventListenerOptions
   ) {
-    this.addEventListener(type, listener as EventListener, { ...options, once: true })
+    this.addEventListener(
+      type,
+      listener as EventListener,
+      { ...options, once: true }
+    )
+
+    return this
   }
 
   /**
@@ -189,12 +201,12 @@ export class SuperElement extends HTMLElement {
   select<T extends HTMLElement>(query: string) {
     const element = this.root.querySelector(query) as SelectedElement<T>
 
-    if(!element) return
-
-    element.on = this.on.bind(element)
-    element.once = this.once.bind(element)
-    element.select = this.select.bind(element)
-    element.selectAll = this.selectAll.bind(element)
+    if (element) {
+      element.on = this.on.bind(element)
+      element.once = this.once.bind(element)
+      element.select = this.select.bind(element)
+      element.selectAll = this.selectAll.bind(element)
+    }
 
     return element
   }
@@ -211,9 +223,7 @@ export class SuperElement extends HTMLElement {
   selectAll<T extends HTMLElement>(query: string) {
     const elements = [...this.root.querySelectorAll(query)] as SelectedElement<T>[]
 
-    if(!elements.length) return []
-
-    for(const element of elements) {
+    for (const element of elements) {
       element.on = this.on.bind(element)
       element.once = this.once.bind(element)
       element.select = this.select.bind(element)

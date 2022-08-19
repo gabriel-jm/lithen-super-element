@@ -21,5 +21,5 @@ export interface SuperElementBuildProps {
    * 
    * @defaultValue `false`
    */
-  preventRenderApplying?: boolean
+  preventRender?: boolean
 }
