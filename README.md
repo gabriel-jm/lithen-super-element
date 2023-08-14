@@ -50,5 +50,5 @@ customElements.define('app-element', AppElement)
 - [once](./docs/once.md)
 
 ## Other libs that are part of Lithen
-- [lithen-tag-functions](https://www.npmjs.com/package/lithen-tag-functions)
+- [lithen-fns](https://www.npmjs.com/package/lithen-fns)
 - [lithen-routing](https://www.npmjs.com/package/lithen-router)

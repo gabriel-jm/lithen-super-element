@@ -4,9 +4,9 @@ export function cssStyleSheetSupport() {
   if (isFirefox) return false
 
   try {
-    const styleSheet = new CSSStyleSheet() as CSSStyleSheet & { replace(str: string): void }
+    const styleSheet = new CSSStyleSheet()
 
-    styleSheet.replace('')
+    styleSheet.replaceSync('')
 
     return true
   } catch {
