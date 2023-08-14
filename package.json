@@ -1,6 +1,6 @@
 {
   "name": "lithen-super-element",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Super Element class of Lithen",
   "author": "Gabriel José",
   "homepage": "https://github.com/Gabriel-JM/lithen-super-element#readme",
@@ -20,7 +20,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "prepublishOnly": "rm -rf build && npm run build"
+    "prepublishOnly": "rm -rf build && npm run build",
+    "check": "ncu"
   },
   "keywords": [
     "lithen",
@@ -30,6 +31,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "typescript": "^4.7.4"
+    "npm-check-updates": "^16.11.1",
+    "typescript": "^5.1.6"
   }
 }
