@@ -63,7 +63,7 @@ export class SuperElement extends HTMLElement {
    */
   constructor({
     mode = 'open',
-    shadowRoot = true,
+    shadowRoot = false,
     preventRender = false
   }: SuperElementBuildProps = {}) {
     super()
