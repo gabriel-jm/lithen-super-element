@@ -9,7 +9,7 @@ type ElementRootReference = HTMLElement | (
 export type SuperElementStylingValues = string | String
 
 export type SuperElementRenderValues = (
-  string | String | Element | DocumentFragment | NodeList | HTMLCollection
+  string | String | Node | NodeList
 )
 
 function scheduleRenderNotAppliedWarn(element: SuperElement) {

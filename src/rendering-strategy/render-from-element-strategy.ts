@@ -3,7 +3,7 @@ import { getRenderRoot } from './get-render-root.js'
 
 export function renderFromElement(
   context: Element | SuperElement,
-  content: Element | DocumentFragment | NodeList | HTMLCollection
+  content: Node | NodeList
 ) {
   const isSingleElement = (
     content instanceof Element

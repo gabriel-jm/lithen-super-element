@@ -21,6 +21,8 @@
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "rm -rf build && npm run build",
+    "predev": "npm run build && cp -r ./build ./dev-app",
+    "dev": "vite ./dev-app",
     "check": "ncu"
   },
   "keywords": [
@@ -32,6 +34,7 @@
   "license": "MIT",
   "devDependencies": {
     "npm-check-updates": "^16.14.17",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.3",
+    "vite": "^5.2.2"
   }
 }
